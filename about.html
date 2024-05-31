@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section c>
+      <div class="row">
+	    
+        <h2 class="section-heading">ABOUT US</h2>
+      </div>
+	  <p class="description">
+    Welcome to Anatomy studio! At Anatomy studio, we are passionate about
+    the human body and dedicated to making the study of human anatomy
+    accessible, engaging, and comprehensive for learners at all levels.
+    Whether you're a student, healthcare professional, or simply a curious
+    mind, our mission is to provide you with the best resources to
+    understand the intricate structures and functions of the human body.
+</p>
+     <div class="nav-logo">
+                <p>Anatomy studio</p>
+            </div>
+	  <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3>Mission</h3>
+            <p>
+              Our mission is to revolutionize the way you learn anatomy by providing in-depth content. We offer detailed and accurate information covering all aspects of human anatomy, from basic structures to complex systems. Our engaging tools and resources. are designed to enhance your learning experience. Our user-friendly platform is designed to make learning easy and enjoyable, whether you are at home, in the classroom, or on the go.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3>Vision</h3>
+            <p>
+               We envision a world where understanding human anatomy is simplified, demystified, and available to everyone. By leveraging technology and innovative teaching methods, we aim to be the leading online resource for anatomy education. Our goal is to foster a community of learners who are knowledgeable, confident, and inspired by the human body.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h3>Why choose us?</h3>
+            <p>
+              At Anatomy Studio, we offer comprehensive coverage of every part of the human anatomy with precision and clarity. Our content is meticulously researched and continuously updated to ensure accuracy and relevance. We provide a supportive community where you can join like-minded learners and experts who share your passion and curiosity. Our adaptive learning tools allow you to personalize your study experience to fit your individual needs and pace.
+			  Thank you for choosing Anatomy studio as your trusted resource for learning human anatomy. We are here to support your journey every step of the way. Explore, learn, and be inspired by the wonders of the human body with Anatomy studio. Happy learning!
+            </p>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+ <style>
+   * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  
+}
+body {
+  background-color: #faf1eb;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+section {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  text-color: white;
+}
+.column {
+  width: 100%;
+  padding: 0 1em 1em 1em;
+  text-align: center;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 2em 1.5em;
+  background: linear-gradient(#ffffff 50%, #ffab73 50%);
+  background-size: 100% 200%;
+  background-position: 0 2.5%;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffab73;
+  margin: 1em 0;
+}
+.description {
+        color: black;
+}
+.section-heading {
+    color: black;
+	font-family: 'century gothic'; font-size: 130px;
+	}
+p {
+  color: #575a7b;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+.icon-wrapper {
+  background-color: #ffab73;
+  position: relative;
+  margin: auto;
+  font-size: 30px;
+  height: 2.5em;
+  width: 2.5em;
+  color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+  
+}
+.card:hover {
+  background-position: 0 100%;
+}
+.card:hover .icon-wrapper {
+  background-color: #ffffff;
+  color: #ffab73;
+}
+.card:hover h3 {
+  color: #ffffff;
+}
+.card:hover p {
+  color: #f0f0f0;
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 2em;
+  }
+  .column {
+    flex: 0 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em 3em;
+  }
+  .column {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+ </style>
+</html>

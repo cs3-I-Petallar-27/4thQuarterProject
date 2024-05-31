@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Anatomy studio</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Anatomy studio</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="link active">Home</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="glossary.html" class="link">Glossary</a></li>
+					<li><a href="Humanbody.html" class="link">Human body</a></li>
+					<li><a href="quiz.html" class="link">Short Quiz</a></li>
+                    <li><a href="LOGIN.html" class="link">login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div class="hero-text">
+    <h2>LEARNING HUMAN ANATOMY</h2>
+    <a href="Humanbody.html"><button>Start learning</button></a>
+</div>
+
+        </div>
+    </div>
+	
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  
+
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: url("home2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+
+.nav-logo p {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style-type: none;
+}
+
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding-left: 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: black;
+	font-family: 'century gothic'; font-size: 130px;
+}
+
+.hero-text button {
+    background-color: #b22222;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.hero-text button:hover {
+    background-color: #d32f2f;
+}
+</style>
+
+</body>
+</html>

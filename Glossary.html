@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Anatomy Glossary</title>
+</head>
+<body>
+
+<h2>HUMAN ANATOMY GLOSSARY</h2>
+
+<div class="nav-logo">
+            <p>Anatomy studio</p>
+        </div>
+
+<button class="accordion">Anatomy</button>
+<div class="panel">
+  <p>•Anatomy is the study of the structure and organization of the body and its parts.</p>
+</div>
+
+<button class="accordion">Physiology</button>
+<div class="panel">
+  <p>•The study of how the organs and systems of the body function and work together to maintain life.</p>
+</div>
+
+<button class="accordion">Tissue</button>
+<div class="panel">
+  <p>•A group of cells that perform a specific function or functions together.</p>
+</div>
+
+<button class="accordion">Organism</button>
+<div class="panel">
+  <p>•An individual living being that exhibits all the characteristics of life, including growth, reproduction, response to stimuli, and metabolism.</p>
+</div>
+
+<button class="accordion">Organ</button>
+<div class="panel">
+  <p>•A structure composed of different tissues that work together to carry out specific functions in the body.</p>
+</div>
+
+<button class="accordion">System</button>
+<div class="panel">
+  <p>•A group of organs and tissues that work together to perform a specific physiological function.</p>
+</div>
+
+<button class="accordion">Homeostasis</button>
+<div class="panel">
+  <p>•Body's stable internal conditions.</p>
+</div>
+
+<button class="accordion">Cell</button>
+<div class="panel">
+  <p>•Basic unit of life.</p>
+</div>
+
+<button class="accordion">Skeletal System</button>
+<div class="panel">
+  <p>•The body system composed of bones, cartilage, ligaments, and other connective tissues that provides support, protection, and structure to the body and facilitates movement.</p>
+</div>
+
+<button class="accordion">Muscular System</button>
+<div class="panel">
+  <p>•The system composed of muscles and tendons that enables movement of the body and its parts, maintains posture, and generates heat.</p>
+</div>
+
+<button class="accordion">Nervous System</button>
+<div class="panel">
+  <p>•The system composed of the brain, spinal cord, nerves, and sensory organs that coordinates and controls bodily functions and responds to internal and external stimuli.</p>
+</div>
+
+<button class="accordion">Circulatory System</button>
+<div class="panel">
+  <p>•The system composed of the heart, blood vessels, and blood that transports oxygen, nutrients, hormones, and waste products throughout the body.</p>
+</div>
+
+<button class="accordion">Respiratory System</button>
+<div class="panel">
+  <p>•The system composed of the lungs and airways that exchanges oxygen and carbon dioxide between the body and the environment.</p>
+</div>
+
+<button class="accordion">Digestive System</button>
+<div class="panel">
+  <p>•The system composed of the mouth, esophagus, stomach, intestines, and other organs that breaks down food into nutrients, absorbs nutrients into the bloodstream, and eliminates waste products.</p>
+</div>
+
+<button class="accordion">Endocrine System</button>
+<div class="panel">
+  <p>•The system composed of glands that secrete hormones into the bloodstream to regulate various physiological processes, including metabolism, growth, and reproduction.</p>
+</div>
+
+<button class="accordion">Reproductive System</button>
+<div class="panel">
+  <p>•The system composed of organs and structures involved in reproduction, including the gonads (testes in males, ovaries in females), external genitalia, and associated structures.</p>
+</div>
+
+<button class="accordion">Integumentary System</button>
+<div class="panel">
+  <p>•The system composed of the skin, hair, nails, and glands that protects the body from external threats, regulates temperature, and synthesizes vitamin D.</p>
+</div>
+
+<button class="accordion">Immune System</button>
+<div class="panel">
+  <p>•The system composed of cells, tissues, and organs that defends the body against pathogens, foreign substances, and abnormal cells.</p>
+</div>
+
+<button class="accordion">Urinary System</button>
+<div class="panel">
+  <p>•The system composed of the kidneys, ureters, bladder, and urethra that removes waste products from the blood, regulates electrolyte balance, and maintains fluid balance.</p>
+</div>
+
+<button class="accordion">Sensory System</button>
+<div class="panel">
+  <p>•The systems involved in sensation, including the visual (eyes), auditory (ears), olfactory (nose), gustatory (tongue), and somatosensory (touch) systems.</p>
+</div>
+
+<script>
+  var accordions = document.getElementsByClassName("accordion");
+
+  for (var i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  
+  body {
+    background-color: #faf1eb;
+  }
+  
+  .accordion {
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+    border-bottom: 1px solid #ddd;
+	font-family: 'poppins';
+  }
+  h2 {
+   font-size: 100px;
+	font-family: 'century gothic';
+	margin-top: 0;
+	margin-bottom: 1rem;
+	text-align: center;
+  }
+  .nav-logo p{
+    color: grey;
+    font-size: 25px;
+    font-weight: 600;
+	text-align:  center;
+	font-family: 'Poppins';
+}
+
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #faf1eb;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+	font-family: 'poppins';
+	font-size: 20px;
+  }
+  .accordion::after {
+    content: '\2661'; 
+    font-size: 20px;
+    float: right;
+  }
+
+  .active::after {
+    content: '\2665'; 
+  }
+</style>
+
+</body>
+</html>

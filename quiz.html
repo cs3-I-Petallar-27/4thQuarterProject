@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Quiz</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="start-screen">
+        <button id="start-button">Start</button>
+    </div>
+    <div id="quiz-container" class="hide">
+        <div class="header">
+            <div class="logo">Anatomy Studio</div>
+            <div class="question-count">
+                <span class="current-question">1 of 10 questions</span>
+            </div>
+        </div>
+        <div id="question-display">
+        </div>
+        <button id="next-button">Next</button>
+    </div>
+    <div class="score-container hide">
+        <div id="user-score">Your Score</div>
+        <button id="restart-button">Restart</button>
+    </div>
+</body>
+<script>
+
+    let questionDisplay = document.getElementById("question-display");
+    let nextButton = document.getElementById("next-button");
+    let questionCountElement = document.querySelector(".current-question");
+    let quizContainer = document.getElementById("quiz-container");
+    let scoreContainer = document.querySelector(".score-container");
+    let restartButton = document.getElementById("restart-button");
+    let userScore = document.getElementById("user-score");
+    let startScreen = document.querySelector(".start-screen");
+    let startButton = document.getElementById("start-button");
+    let currentQuestionIndex;
+    let score = 0;
+
+    const quizArray = [
+        {
+            id: "0",
+            question: "Which system is responsible for transporting blood throughout the body?",
+            options: ["Respiratory", "Digestive", "Circulatory", "Nervous"],
+            correct: "Circulatory",
+        },
+        {
+            id: "1",
+            question: "Which system controls and coordinates actions and sensory information?",
+            options: ["Muscular", "Nervous", "Endocrine", "Skeletal"],
+            correct: "Nervous",
+        },
+        {
+            id: "2",
+            question: "Which system is responsible for the body's immune response?",
+            options: ["Lymphatic", "Digestive", "Respiratory", "Urinary"],
+            correct: "Lymphatic",
+        },
+        {
+            id: "3",
+            question: "Which system breaks down food into nutrients?",
+            options: ["Digestive", "Respiratory", "Circulatory", "Nervous"],
+            correct: "Digestive",
+        },
+        {
+            id: "4",
+            question: "Which system is responsible for gas exchange in the body?",
+            options: ["Respiratory", "Digestive", "Circulatory", "Nervous"],
+            correct: "Respiratory",
+        },
+        {
+            id: "5",
+            question: "Which system provides support and structure to the body?",
+            options: ["Muscular", "Nervous", "Endocrine", "Skeletal"],
+            correct: "Skeletal",
+        },
+        {
+            id: "6",
+            question: "Which system regulates body functions through hormones?",
+            options: ["Digestive", "Nervous", "Endocrine", "Respiratory"],
+            correct: "Endocrine",
+        },
+        {
+            id: "7",
+            question: "Which system allows for movement of the body?",
+            options: ["Skeletal", "Muscular", "Digestive", "Circulatory"],
+            correct: "Muscular",
+        },
+        {
+            id: "8",
+            question: "Which system is responsible for removing waste products from the body?",
+            options: ["Lymphatic", "Digestive", "Respiratory", "Urinary"],
+            correct: "Urinary",
+        },
+        {
+            id: "9",
+            question: "Which system includes the skin, hair, and nails?",
+            options: ["Digestive", "Nervous", "Integumentary", "Skeletal"],
+            correct: "Integumentary",
+        },
+    ];
+
+    restartButton.addEventListener("click", () => {
+        initializeQuiz();
+        quizContainer.classList.remove("hide");
+        scoreContainer.classList.add("hide");
+    });
+
+
+    nextButton.addEventListener("click", () => {
+        currentQuestionIndex += 1;
+        if (currentQuestionIndex == quizArray.length) {
+            quizContainer.classList.add("hide");
+            scoreContainer.classList.remove("hide");
+            userScore.innerHTML = "Your score is " + score + " out of " + currentQuestionIndex;
+        } else {
+            questionCountElement.innerHTML = currentQuestionIndex + 1 + " of " + quizArray.length + " Questions";
+            displayQuestion(currentQuestionIndex);
+        }
+    });
+
+    const displayQuestion = (index) => {
+        let question = quizArray[index];
+        questionDisplay.innerHTML = `
+            <p class="question">${question.question}</p>
+            ${question.options.map(option => `<button class="option-button" onclick="checkAnswer(this)">${option}</button>`).join('')}
+        `;
+    };
+
+    window.checkAnswer = function (userOption) {
+        let selectedAnswer = userOption.innerText;
+        let question = quizArray[currentQuestionIndex];
+        let options = document.querySelectorAll(".option-button");
+
+        if (selectedAnswer === question.correct) {
+            userOption.classList.add("correct");
+            score++;
+        } else {
+            userOption.classList.add("incorrect");
+            options.forEach((option) => {
+                if (option.innerText == question.correct) {
+                    option.classList.add("correct");
+                }
+            });
+        }
+        options.forEach((option) => {
+            option.disabled = true;
+        });
+    };
+
+    function initializeQuiz() {
+        questionDisplay.innerHTML = "";
+        currentQuestionIndex = 0;
+        score = 0;
+        questionCountElement.innerHTML = 1 + " of " + quizArray.length + " Questions";
+        displayQuestion(currentQuestionIndex);
+    }
+
+    startButton.addEventListener("click", () => {
+        startScreen.classList.add("hide");
+        quizContainer.classList.remove("hide");
+        initializeQuiz();
+    });
+
+    window.onload = () => {
+        startScreen.classList.remove("hide");
+        quizContainer.classList.add("hide");
+    };
+</script>
+<style>
+  * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    body {
+        background-color: #faf1eb;
+        color: #ffffff;
+    }
+    .start-screen, .score-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1.3em;
+        padding: 0.5em 1.8em;
+        border-radius: 0.2em;
+        background-color: #fcb88b;
+        color: #000000;
+    }
+    #quiz-container {
+        background-color: #ffffff;
+        color: #282c34;
+        padding: 3.1em 1.8em;
+        width: 80%;
+        max-width: 37.5em;
+        margin: 0 auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 0.6em;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.8em;
+        padding-bottom: 0.6em;
+        border-bottom: 0.1em solid #c0bfd2;
+    }
+    .logo {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    .question {
+        margin-bottom: 1.25em;
+        font-weight: 600;
+    }
+    .option-button {
+        font-size: 0.9em;
+        width: 100%;
+        padding: 1em;
+        margin: 0.3em 0;
+        text-align: left;
+        outline: none;
+        background: transparent;
+        border: 1px solid #c0bfd2;
+        border-radius: 0.3em;
+        cursor: pointer;
+    }
+    .option-button:disabled {
+        color: #000000;
+        cursor: not-allowed;
+    }
+    #next-button {
+        font-size: 1em;
+        margin-top: 1.5em;
+        background-color: #fa8343;
+        color: #fffff;
+        padding: 0.7em 1.8em;
+        border-radius: 0.3em;
+        float: right;
+    }
+    .hide {
+        display: none;
+    }
+    .incorrect {
+        background-color: #ffdde0;
+        color: #d32f2f;
+        border-color: #d32f2f;
+    }
+    .correct {
+        background-color: #e7f6d5;
+        color: #689f38;
+        border-color: #689f38;
+    }
+    #user-score {
+        font-size: 1.5em;
+		color: #000000;
+    }
+</style>
+</html>
